@@ -1,0 +1,55 @@
+{
+  "description": "New Java Stack",
+  "scope": "general",
+  "workspaceConfig": {
+    "defaultEnv": "default",
+    "environments": {
+      "default": {
+        "recipe": {
+          "contentType": "text/x-yaml",
+          "type": "dockerfile",
+          "content": "FROM node:latest \n RUN apt-get update && apt-get install -y default-jre && apt-get clean && apt-get -y autoremove && apt-get -y clean && rm -rf /var/lib/apt/lists/* \n CMD tail -f /dev/null"
+        },
+        "machines": {
+          "node": {
+            "env": {},
+            "servers": {
+              "3000": {
+                "protocol": "http",
+                "port": "3000",
+                "attributes": {}
+              }
+            },
+            "volumes": {},
+            "installers": [
+              "org.eclipse.che.exec",
+              "org.eclipse.che.unison",
+              "org.eclipse.che.git-credentials",
+              "org.eclipse.che.ssh",
+              "org.eclipse.che.terminal",
+              "org.eclipse.che.ws-agent"
+            ],
+            "attributes": {
+              "memoryLimitBytes": "2147483648"
+            }
+          }
+        }
+      }
+    },
+    "commands": [],
+    "projects": [],
+    "name": "default",
+    "attributes": {},
+    "links": []
+  },
+  "components": [
+    {
+      "version": "Latest",
+      "name": "NodeJs"
+    }
+  ],
+  "tags": [],
+  "creator": "che",
+  "name": "Node Latest",
+  "id": "stack4lk8dg8bmatar46s"
+}
