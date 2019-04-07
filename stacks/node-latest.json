@@ -1,14 +1,13 @@
 {
-  "description": "New Java Stack",
+  "description": "Node Latest",
   "scope": "general",
   "workspaceConfig": {
     "defaultEnv": "default",
     "environments": {
       "default": {
         "recipe": {
-          "contentType": "text/x-yaml",
-          "type": "dockerfile",
-          "content": "FROM node:latest \n RUN apt-get update && apt-get install -y default-jre && apt-get clean && apt-get -y autoremove && apt-get -y clean && rm -rf /var/lib/apt/lists/* \n CMD tail -f /dev/null"
+          "type": "dockerimage",
+          "content": "strochkov/che-node:latest"
         },
         "machines": {
           "node": {
